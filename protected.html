@@ -45,6 +45,15 @@
     min-height: 150vh;
 }
     </style>
+
+    <script>
+       
+        if (!sessionStorage.getItem("authenticated")) {
+            alert("Zugriff verweigert. Bitte melden Sie sich an.");
+            window.location.href = "secret.html";
+        }
+    </script>
+    
 </head>
 <body>
     <header>
