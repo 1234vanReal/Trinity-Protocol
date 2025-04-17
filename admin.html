@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adminzugang - Trinity Protocol</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            background: #444;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        input[type="password"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 200px;
+        }
+        input[type="text"], input[type="password"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 200px;
+            display: block; /* Block-Layout für beide Felder */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Adminzugang</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="bounty.html">Kopfgeld</a>
+        <a href="about.html">Über uns</a>
+        <a href="fragenundantwort.html">Fragen und Antworten</a>
+        <a href="secret.html">Log in</a>
+        <a href="admin.html">Adminzugang</a>
+    </nav>
+    <main>
+        <h2>Adminzugang</h2>
+        <p>Bitte geben Sie Ihren Benutzernamen und das Passwort ein, um sich anzumelden:</p>
+        <input type="text" id="username" placeholder="Benutzername eingeben">
+        <input type="password" id="password" placeholder="Passwort eingeben">
+        <button onclick="checkLogin()">Login</button>
+        <p id="errorMessage" style="color: red; display: none;">Falscher Benutzername oder Passwort!</p>
+    </main>
+    <footer>
+        <p>&copy; 2025 Trinity Protocol.</p>
+        <p>Impressum:kcel reie weg 5</p>
+    </footer>
+
+    <script>
+        function checkLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Beispiel-Benutzerdaten (kann später durch eine Datenbank ersetzt werden)
+            const users = [
+                { username: "Nolord", password: "KIistdieZukunft" },
+                { username: "1234van", password: "passwort123" },
+                { username: "Vincere", password: "FckAfD" },
+                  { username: "SuS_753", password: "bin-auch-dabei" }
+            ];
+
+            // Überprüfen, ob Benutzername und Passwort übereinstimmen
+            const authenticatedUser = users.find(user => user.username === username && user.password === password);
+
+            if (authenticatedUser) {
+                sessionStorage.setItem("authenticated", true);
+                sessionStorage.setItem("username", authenticatedUser.username); // Benutzername speichern
+                window.location.href = "protected.html"; // Weiterleitung zur geschützten Seite
+            } else {
+                document.getElementById('errorMessage').style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
