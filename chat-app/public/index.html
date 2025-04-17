@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App - Trinity Protocol</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            background: #444;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        #messages {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            height: 60vh;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            background: #fff;
+            margin-bottom: 20px;
+        }
+        #messages li {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        #form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        #input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            width: 300px;
+        }
+        #send {
+            padding: 10px 20px;
+            background-color: #444;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #send:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chat App</h1>
+    </header>
+    <nav>
+        <a href="https://1234vanreal.github.io/Trinity-Protocol/index.html">Home</a>
+        <a href="https://1234vanreal.github.io/Trinity-Protocol/bounty.html">Kopfgeld</a>
+        <a href="https://1234vanreal.github.io/Trinity-Protocol/about.html">Über uns</a>
+        <a href="https://1234vanreal.github.io/Trinity-Protocol/fragenundantwort.html">Fragen und Antworten</a>
+        <a href="https://1234vanreal.github.io/Trinity-Protocol/secret.html">Log in</a>
+        <a href="https://1234vanreal.github.io/Trinity-Protocol/protected.html">Geheimer Bereich</a>
+    </nav>
+    <main>
+        <ul id="messages"></ul>
+        <form id="form">
+            <input id="input" autocomplete="off" placeholder="Nachricht eingeben..." />
+            <button id="send" type="submit">Senden</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Trinity Protocol.</p>
+        <p>Impressum: kcel reie weg 5</p>
+    </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
