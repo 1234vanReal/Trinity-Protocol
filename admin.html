@@ -112,7 +112,7 @@
             if (authenticatedUser) {
                 sessionStorage.setItem("authenticated", true);
                 sessionStorage.setItem("username", authenticatedUser.username); // Benutzername speichern
-                window.location.href = "protected.html"; // Weiterleitung zur geschützten Seite
+                window.location.href = "adminzugang.html"; // Weiterleitung zur geschützten Seite
             } else {
                 document.getElementById('errorMessage').style.display = "block";
             }
